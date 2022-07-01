@@ -1,6 +1,15 @@
-from audio.longwave import LongWave
+import os as uos
+from wavePlayer import wavePlayer
 
-lw = LongWave() # Default uses DAC1 and Timer4
-lw.play("audio/haiya.wav")
+def playAudio():
+    player = wavePlayer()
+    wavName= "haiya"
+    try:
+        player.play(f"/audio/{wavName}.wav")
+    except KeyboardInterrupt:
+        player.stop()
+    player.stop()
 
-lw.play('hisnibs.wav', 200) # 120% speed
+if __name__ == "__main__":
+    pass
+    #playAudio()
