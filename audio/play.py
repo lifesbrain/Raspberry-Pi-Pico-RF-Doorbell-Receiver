@@ -10,9 +10,9 @@ import board
 import audiomp3
 import audiopwmio
 
-def playMP3():
+def playMP3(file="slow"):
     audio = audiopwmio.PWMAudioOut(board.GP0)
-    decoder = audiomp3.MP3Decoder(open("audio/haiya.mp3", "rb"))
+    decoder = audiomp3.MP3Decoder(open(f"audio/{file}.mp3", "rb"))
 
     audio.play(decoder)
     while audio.playing:
