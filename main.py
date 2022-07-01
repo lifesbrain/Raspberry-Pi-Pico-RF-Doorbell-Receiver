@@ -1,3 +1,6 @@
-from audio.play import playMP3
+from audio.longwave import LongWave
 
-playMP3()
+lw = LongWave() # Default uses DAC1 and Timer4
+lw.play("audio/haiya.wav")
+
+lw.play('hisnibs.wav', 200) # 120% speed
